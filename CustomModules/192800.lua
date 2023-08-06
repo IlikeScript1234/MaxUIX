@@ -1,4 +1,5 @@
 local kavo = shared.kavolib
+kavo:Button()
 local Sections = shared.SectionsLoaded
 local Tabs = shared.TabLoaded
 local FunctionsLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/NTDCore/NightbedForRoblox/main/Libraries/FunctionsHandler.lua"))()
@@ -109,7 +110,7 @@ Sections["TrollMenu"].CreateButton({
 
 _G.cookroomfucker = true
 Sections["TrollMenu"].CreateButton({
-    Name = "Car Teleporter",
+    Name = "Room Fucker 9000",
     Function = function()
         local lp = game:GetService("Players").LocalPlayer
         local remote
@@ -180,7 +181,6 @@ Sections["TrollMenu"].CreateButton({
 })
 
 
-local destroy = workspace.GameService.CloseBox
 Sections["TrollMenu"].CreateTextBox({
     Name = "Kill Player",
     Function = function(txt)
@@ -189,7 +189,7 @@ Sections["TrollMenu"].CreateTextBox({
     HoverText = "killing player"
 })
 
-local destroy = workspace.GameService.CloseBox
+local destroy = Workspace.GameService.CloseBox
 Sections["Menu"].CreateButton({
     Name = "AutoFarmMenu",
     Function = function()
@@ -220,9 +220,10 @@ Sections["Speed"].CreateSlider({
     Name = "Value",
     Min = 0,
     Max = 5,
-    Default = 3,
+    Default = 4,
     Function = function(val)
         SpeedValue["Value"] = val
     end,
     HoverText = "Speed Value"
 })
+kavo:Notification("Kavo", "MaxUi Has Been Loaded", 4)

@@ -172,6 +172,24 @@ function kavo:ToggleWindow()
     end
 end
 
+function kavo:Button()
+    local screenGui = Instance.new("ScreenGui")
+    screenGui.Parent = game.CoreGui
+    
+    local button = Instance.new("TextButton")
+    button.Position = UDim2.new(1, -30, 0, 18)
+    button.Text = "MaxUi"
+    button.BackgroundColor3 = Color3.fromRGB(26, 25, 26)
+    button.TextColor3 = Color3.new(1, 1, 1)
+    button.Size = UDim2.new(0, 30, 0, 20)
+    button.BorderSizePixel = 0
+    button.BackgroundTransparency = 0.5
+    button.Parent = screenGui
+    button.MouseButton1Click:Connect(function()
+        kavo:ToggleWindow()
+    end)
+end
+
 local Notification = Instance.new("ScreenGui")
 Notification.Name = "Notification"
 Notification.Parent = game.CoreGui

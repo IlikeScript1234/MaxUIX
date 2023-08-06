@@ -3,6 +3,18 @@ local Sections = shared.SectionsLoaded
 local Tabs = shared.TabLoaded
 local FunctionsLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/NTDCore/NightbedForRoblox/main/Libraries/FunctionsHandler.lua"))()
 local name = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+local AutoLeave = false
+if AutoLeave == true then
+    local Players = game:GetService("Players")
+    local GroupId = 17449
+    
+    Players.PlayerAdded:Connect(function(player)
+        local playerRank = player:GetRankInGroup(GroupId)
+        if playerRank == 254 or 255 then
+            game.Players.LocalPlayer:Kick("Staff In The Server Detected")
+        end
+    end)
+end
 
 local win = kavo:CreateWindow({
     ["Title"] = "MaxUi X | ".. name,
@@ -16,9 +28,8 @@ local Tabs = {
   
 local Sections = shared.SectionsLoaded
 Sections = {
-    ["CarCrasher"] = Tabs["Main"].CreateSection("CarCrasher"),
+    ["TrollMenu"] = Tabs["Main"].CreateSection("TrollMenu"),
     ["Menu"] = Tabs["Main"].CreateSection("Menu"),
-    ["KillPlayer"] = Tabs["Main"].CreateSection("KillPlayer"),
     ["Speed"] = Tabs["Main"].CreateSection("Speed"),
     ["NTDCore"] = Tabs["Credits"].CreateSection("Monia: Argstable Lib, Cfgs, theme")
 }
@@ -42,41 +53,140 @@ local CarModels = Cars:GetChildren()
 local Trucks = game.Workspace:WaitForChild("Trucks")
 local TruckModels = Trucks:GetChildren()
 local CarCrasher = {Enabled = false}
-CarCrasher = Sections["CarCrasher"].CreateToggle({
+CarCrasher = Sections["TrollMenu"].CreateToggle({
     Name = "CarCrasher",
     Function = function(callback)
         CarCrasher.Enabled = callback
         funcslib.displayErrorPopup("Warning", "Execute Infinite Yield And Use Fly Commands", "Okay!") 
-        task.spawn(function()
-            repeat task.wait(0.15)
-                for i, v in pairs(CarModels) do
-                    if v.ClassName ~= "Model" then
-                        table.remove(CarModels, i)
-                    end
+        repeat task.wait(0.15)
+            for i, v in pairs(CarModels) do
+                if v.ClassName ~= "Model" then
+                    table.remove(CarModels, i)
                 end
-                
-                for i, v in pairs(TruckModels) do
-                    if v.ClassName ~= "Model" then
-                        table.remove(TruckModels, i)
-                    end
+            end
+            
+            for i, v in pairs(TruckModels) do
+                if v.ClassName ~= "Model" then
+                    table.remove(TruckModels, i)
                 end
-                
-                local VehicleModels = {}
-                for _, v in pairs(CarModels) do
-                    table.insert(VehicleModels, v)
-                end
-                for _, v in pairs(TruckModels) do
-                    table.insert(VehicleModels, v)
-                end
-                
-                local Vehicle = VehicleModels[math.random(#VehicleModels)]
-                local Seat = Vehicle:WaitForChild("Seat")
-                
-                HumanoidRootPart.CFrame = Seat.CFrame
-            until (not CarCrasher.Enabled)
-        end)
+            end
+            
+            local VehicleModels = {}
+            for _, v in pairs(CarModels) do
+                table.insert(VehicleModels, v)
+            end
+            for _, v in pairs(TruckModels) do
+                table.insert(VehicleModels, v)
+            end
+            
+            local Vehicle = VehicleModels[math.random(#VehicleModels)]
+            local Seat = Vehicle:WaitForChild("Seat")
+            
+            HumanoidRootPart.CFrame = Seat.CFrame
+        until (not CarCrasher.Enabled)
     end,
     HoverText = "crash people car"
+})
+
+
+Sections["TrollMenu"].CreateButton({
+    Name = "Car Teleporter",
+    Function = function()
+        local unanchoredVehicles = {}
+        for _, vehicle in pairs(game.Workspace:GetDescendants()) do
+            if (vehicle:IsA("VehicleSeat") or vehicle.Name == "Trunk1" or vehicle.Name == "Trunk2") and not vehicle.Anchored then
+                table.insert(unanchoredVehicles, vehicle)
+            end
+        end
+        
+        local player = game.Players.LocalPlayer
+        for _, vehicle in pairs(unanchoredVehicles) do
+            vehicle.CFrame = player.Character.HumanoidRootPart.CFrame
+        end        
+    end,
+    HoverText = "was not made by me"
+})
+
+_G.cookroomfucker = true
+Sections["TrollMenu"].CreateButton({
+    Name = "Car Teleporter",
+    Function = function()
+        local lp = game:GetService("Players").LocalPlayer
+        local remote
+        local ffc = game.FindFirstChild
+
+        do
+            local reg = (getreg or debug.getregistry)()
+            for i=1,#reg do
+                local f = reg[i]
+                if type(f)=="table" and rawget(f,"FireServer") and rawget(f,"BindEvents") then
+                    remote = f
+                end
+            end
+        end
+
+        function moveThing(bmd, location)
+            remote:FireServer("UpdateProperty", bmd, "CFrame", location)
+            wait()
+            remote:FireServer("SquishDough", bmd)
+        end
+
+        for i,v in pairs(workspace.AllSupplyBoxes:GetChildren()) do
+            v.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
+        end
+        wait()
+
+
+        spawn(function()
+            while _G.cookroomfucker and wait() do
+                spawn(function()
+                    for i,v in pairs(workspace.AllDough:GetChildren()) do
+                        moveThing(v, CFrame.new(Random.new():NextNumber(22.6,51.6),Random.new():NextNumber(3.6,14.6),Random.new():NextNumber(55.5,70.5)))
+                    end
+                end)
+                spawn(function()
+                    for i,v in pairs(workspace.AllMountainDew:GetChildren()) do
+                        moveThing(v, CFrame.new(Random.new():NextNumber(22.6,51.6),Random.new():NextNumber(3.6,14.6),Random.new():NextNumber(55.5,70.5)))
+                    end
+                end)
+                spawn(function()
+                    for i,v in pairs(workspace.BoxingRoom:GetChildren()) do
+                        moveThing(v, CFrame.new(Random.new():NextNumber(22.6,51.6),Random.new():NextNumber(3.6,14.6),Random.new():NextNumber(55.5,70.5)))
+                    end
+                end)
+                spawn(function()
+                    for i,v in pairs(workspace.AllBox:GetChildren()) do
+                        moveThing(v, CFrame.new(Random.new():NextNumber(22.6,51.6),Random.new():NextNumber(3.6,14.6),Random.new():NextNumber(55.5,70.5)))
+                    end
+                end)
+                spawn(function()
+                    for i,v in pairs(workspace.AllSupplyBoxes:GetChildren()) do
+                        moveThing(v, CFrame.new(Random.new():NextNumber(22.6,51.6),Random.new():NextNumber(3.6,14.6),Random.new():NextNumber(55.5,70.5)))
+                    end
+                end)
+            end
+        end)
+
+        spawn(function()
+            while _G.cookroomfucker and wait() do
+                for i,v in pairs(game:GetService("Workspace").Ovens:GetChildren()) do
+                    v.Door.ClickDetector.Detector:FireServer()
+                    wait(.15)
+                end
+            end
+        end)    
+    end,
+    HoverText = "was not made by me"
+})
+
+
+local destroy = workspace.GameService.CloseBox
+Sections["TrollMenu"].CreateTextBox({
+    Name = "Kill Player",
+    Function = function(txt)
+        destroy:FireServer(Players:FindFirstChild(txt).Character.Head,"call")
+    end,
+    HoverText = "killing player"
 })
 
 local destroy = workspace.GameService.CloseBox
@@ -86,15 +196,6 @@ Sections["Menu"].CreateButton({
         loadstring(game:HttpGet("https://pastebin.com/raw/cEwtwKZR", true))()
     end,
     HoverText = "was not made by me"
-})
-
-local destroy = workspace.GameService.CloseBox
-Sections["KillPlayer"].CreateTextBox({
-    Name = "Kill Player",
-    Function = function(txt)
-        destroy:FireServer(Players:FindFirstChild(txt).Character.Head,"call")
-    end,
-    HoverText = "killing player"
 })
 
 local SpeedValue = {Value = 4}

@@ -3,11 +3,10 @@
 ]]
 local kavo = shared.kavolib
 print("kavo loaded")
-local Sections = shared.SectionsLoaded
-print("section loaded")
 local Tabs = shared.TabLoaded
 print("tab loaded")
-local InstantInteractConnection
+local Sections = shared.SectionsLoaded
+print("section loaded")
 
 local win = kavo:CreateWindow({
     ["Title"] = "Aqura | Universal",
@@ -32,6 +31,7 @@ local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local chr = player.Character or player.CharacterAdded:Wait()
 local HumanoidRootPart = chr:WaitForChild("HumanoidRootPart")
+local InstantInteractConnection
 
 print("function loaded")
 

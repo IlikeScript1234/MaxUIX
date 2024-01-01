@@ -1,6 +1,4 @@
---[[
-  ty monia for instant interact!!!!!!
-]]
+print("test universal1")
 local kavo = shared.kavolib
 print("kavo loaded")
 local Tabs = shared.TabLoaded
@@ -23,7 +21,7 @@ Sections = {
     ["InfJump"] = Tabs["Main"].CreateSection("Infinite Jump")
     ["Speed"] = Tabs["Main"].CreateSection("Speed"),
     ["InstantInteract"] = Tabs["Main"].CreateSection("Instant Interact")
-    ["NTDCore"] = Tabs["Credits"].CreateSection("ty monia for kavo and instant interace!!!")
+    ["NTDCore"] = Tabs["Credits"].CreateSection("ty monia for kavo and instant interact!!!")
 }
 print("section created")
 

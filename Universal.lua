@@ -1,4 +1,4 @@
-print("universal v2")
+print("universal v3")
 local kavo = loadstring(game:HttpGet("https://raw.githubusercontent.com/IlikeScript1234/MaxUIX/main/Libraries/kavo.lua"))()
 print("library loaded")
 print("section and tabs loaded")
@@ -39,6 +39,7 @@ InfJump = Sections["InfJump"].CreateToggle({
     end,
     HoverText = ""
 })
+    kavo:Button()
 --[[
 local SpeedValue = {Value = 14}
 local Speed = {Enabled = false}
@@ -64,7 +65,7 @@ Sections["Speed"].CreateSlider({
     end,
     HoverText = "Speed Value"
 })
-    --]]
+   
 local InstantInteractConnection
 local InstantInteract = {Enabled = false}
 InstantInteract = Sections["InstantInteract"].CreateToggle({
@@ -82,7 +83,7 @@ InstantInteract = Sections["InstantInteract"].CreateToggle({
 })
 
 print("all modules loaded")
-kavo:Button()
+
     
 --kavo:Notification("Kavo", "MaxUi Has Been Loaded", 4)
 

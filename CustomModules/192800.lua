@@ -1,5 +1,4 @@
 local kavo = shared.kavolib
-print("library loaded")
 local Sections = shared.SectionsLoaded
 local Tabs = shared.TabLoaded
 
@@ -21,13 +20,14 @@ Sections = {
     ["Speed"] = Tabs["Main"].CreateSection("Speed"),
     ["NTDCore"] = Tabs["Credits"].CreateSection("Monia: Argstable Lib, Cfgs, theme")
 }
-print("section created")
 kavo:Button()
 
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local chr = player.Character or player.CharacterAdded:Wait()
 local HumanoidRootPart = chr:WaitForChild("HumanoidRootPart")
+local PlayerService = game:GetService("Players")
+local lplr = PlayerService.LocalPlayer
 
 local Cars = game.Workspace:WaitForChild("Cars")
 local CarModels = Cars:GetChildren()
@@ -177,7 +177,9 @@ Speed = Sections["Speed"].CreateToggle({
         Speed.Enabled = callback
         if callback then
             repeat task.wait()
-                  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = SpeedValue.Value
+                  lplr.Character.Humanoid.WalkSpeed = SpeedValue.Value
+        else
+                  lplr.Character.Humanoid.WalkSpeed = 16
             until (not Speed.Enabled)
         end
     end,
@@ -197,7 +199,8 @@ Sections["Speed"].CreateSlider({
 task.spawn(function()
     repeat task.wait()
         if shared.Aqura == false then
-            Speed.Enabled = false  
+            Speed.Enabled = false
+            lplr.Character.Humanoid.WalkSpeed = 16
         end
     until shared.Aqura == false
 end)

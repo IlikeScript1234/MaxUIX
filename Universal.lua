@@ -1,8 +1,6 @@
 --[[
   ty monia for instant interact!!!!!!
 ]]
-
-
 local kavo = shared.kavolib
 print("kavo loaded")
 local Sections = shared.SectionsLoaded

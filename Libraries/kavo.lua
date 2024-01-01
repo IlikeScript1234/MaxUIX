@@ -43,18 +43,20 @@ function kavo:DraggingEnabled(frame, parent)
     end)
 end
 
-function Utility:TweenObject(obj, properties, duration, ...)
-    tween:Create(obj, tweeninfo(duration, ...), properties):Play()
-end
-
-shared.KavoLoaded = true
-
     input.InputChanged:Connect(function(input)
         if input == dragInput and dragging then
             local delta = input.Position - mousePos
             parent.Position  = UDim2.new(framePos.X.Scale, framePos.X.Offset + delta.X, framePos.Y.Scale, framePos.Y.Offset + delta.Y)
         end
     end)
+
+function Utility:TweenObject(obj, properties, duration, ...)
+    tween:Create(obj, tweeninfo(duration, ...), properties):Play()
+end
+
+shared.KavoLoaded = true
+
+
    
 local themes = {
     SchemeColor = Color3.fromRGB(74, 99, 135),

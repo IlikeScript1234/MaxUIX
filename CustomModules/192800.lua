@@ -200,6 +200,6 @@ task.spawn(function()
             Speed.Enabled = false  
         end
     until Aqura == false
-end
+end)
                                 
 kavo:Notification("Kavo", "Aqura Has Been Loaded", 4)

@@ -176,7 +176,7 @@ end
 
 function kavo:Button()
     task.spawn(function()
-	    local screenGui = Instance.new("ScreenGui")
+	    local screenGui = Instance.new("screenGuiM")
 	    screenGui.Parent = game.CoreGui
 	    
 	    local button = Instance.new("TextButton")
@@ -404,6 +404,7 @@ function kavo:CreateWindow(argstable)
         shared.KavoLoaded = false
 	Aqura = false
         ScreenGui:Destroy()
+	game.CoreGui.screenGuiM:Destroy()
         NewBlur:Destroy()
     end)
 

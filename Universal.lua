@@ -44,9 +44,9 @@ Speed = Sections["Speed"].CreateToggle({
         Speed["Enabled"] = callback
         if callback then
             repeat task.wait()
-                  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = SpeedValue.Value
+                  lplr.Character.Humanoid.WalkSpeed = SpeedValue.Value
 	else
-                  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+                  lplr.Character.Humanoid.WalkSpeed = 16
             until (not Speed.Enabled)
         end
     end,

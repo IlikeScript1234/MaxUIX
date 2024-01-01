@@ -119,7 +119,6 @@ function MainLoaded()
         loadstring(Universal)()
     end
 end
-MaxUiFile("MainScript", code)
 
 task.spawn(function()
     MainLoaded()

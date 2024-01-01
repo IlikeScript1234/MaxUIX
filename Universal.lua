@@ -23,7 +23,6 @@ local Sections = {
 print("All Function Loaded")
 print("function loaded")
 wait(1)
---[[
 local Humanoid =  game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass('Humanoid')
 local InfJump = {Enabled = false}
 InfJump = Sections["InfJump"].CreateToggle({
@@ -40,8 +39,7 @@ InfJump = Sections["InfJump"].CreateToggle({
     end,
     HoverText = ""
 })
-
-]]
+--[[
 local SpeedValue = {Value = 14}
 local Speed = {Enabled = false}
 Speed = Sections["Speed"].CreateToggle({
@@ -66,6 +64,7 @@ Sections["Speed"].CreateSlider({
     end,
     HoverText = "Speed Value"
 })
+    --]]
 local InstantInteractConnection
 local InstantInteract = {Enabled = false}
 InstantInteract = Sections["InstantInteract"].CreateToggle({

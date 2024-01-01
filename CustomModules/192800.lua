@@ -2,12 +2,10 @@ local kavo = shared.kavolib
 
 local Sections = shared.SectionsLoaded
 local Tabs = shared.TabLoaded
-local FunctionsLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/NTDCore/NightbedForRoblox/main/Libraries/FunctionsHandler.lua"))()
-local name = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 
 
 local win = kavo:CreateWindow({
-    ["Title"] = "Aqura | ".. name,
+    ["Title"] = "Aqura | Work At a Pizza Place",
     ["Theme"] = "Luna"
   })
   
@@ -24,7 +22,7 @@ Sections = {
     ["NTDCore"] = Tabs["Credits"].CreateSection("Monia: Argstable Lib, Cfgs, theme")
 }
 
-
+kavo:Button()
 
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
@@ -195,4 +193,4 @@ Sections["Speed"].CreateSlider({
     end,
     HoverText = "Speed Value"
 })
-kavo:Button()
+

@@ -1,25 +1,25 @@
 print("universal real")
 local kavo = shared.kavolib
 print("library loaded")
-
+local Sections = shared.SectionsLoaded
+local Tabs = shared.TabLoaded
+print("section and tabs loaded")
 
 
 
 --[[
-local Sections = shared.SectionsLoaded
-local Tabs = shared.TabLoaded
+
 local win = kavo:CreateWindow({
     ["Title"] = "Aqura | Work At a Pizza Place",
     ["Theme"] = "Luna"
   })
   print("win created")
-local Tabs = {
+Tabs = {
     ["Main"] = win.CreateTab("Main"),
     ["Credits"] = win.CreateTab("Credits")
 }
   print("tab created")
-  
-local Sections = shared.SectionsLoaded
+
 Sections = {
     ["InfJump"] = Tabs["Main"].CreateSection("Infinite Jump")
     ["Speed"] = Tabs["Main"].CreateSection("Speed"),

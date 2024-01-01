@@ -1,4 +1,4 @@
-print("universal v1")
+print("universal v2")
 local kavo = loadstring(game:HttpGet("https://raw.githubusercontent.com/IlikeScript1234/MaxUIX/main/Libraries/kavo.lua"))()
 print("library loaded")
 print("section and tabs loaded")

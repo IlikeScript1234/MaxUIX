@@ -149,7 +149,7 @@ local SettingsT = {
 }
 
 local Name = "kavoConfig.JSON"
-local Aqura = true
+shared.Aqura = true
 
 pcall(function()
 
@@ -402,7 +402,7 @@ function kavo:CreateWindow(argstable)
         }):Play()
         wait(1)
         shared.KavoLoaded = false
-	Aqura = false
+	shared.Aqura = false
         ScreenGui:Destroy()
 	game.CoreGui.screenGuiM:Destroy()
         NewBlur:Destroy()

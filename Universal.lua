@@ -2,6 +2,7 @@ print("universal real")
 local kavo = loadstring(game:HttpGet("https://raw.githubusercontent.com/IlikeScript1234/MaxUIX/main/Libraries/kavo.lua"))()
 print("library loaded")
 print("section and tabs loaded")
+wait(1)
 local win = kavo:CreateWindow({
     ["Title"] = "Aqura | Universal",
     ["Theme"] = "Luna"
@@ -20,15 +21,8 @@ local Sections = {
     ["NTDCore"] = Tabs["Credits"].CreateSection("ty monia for kavo and instant interact!!!")
 }
 print("All Function Loaded")
-
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
-local chr = player.Character or player.CharacterAdded:Wait()
-local HumanoidRootPart = chr:WaitForChild("HumanoidRootPart")
-local InstantInteractConnection
-
 print("function loaded")
-
+wait(1)
 --[[
 local Humanoid =  game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass('Humanoid')
 local InfJump = {Enabled = false}
@@ -72,7 +66,7 @@ Sections["Speed"].CreateSlider({
     end,
     HoverText = "Speed Value"
 })
-
+local InstantInteractConnection
 local InstantInteract = {Enabled = false}
 InstantInteract = Sections["InstantInteract"].CreateToggle({
     Name = "InstantInteract",

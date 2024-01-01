@@ -4,11 +4,6 @@ print("library loaded")
 local Sections = shared.SectionsLoaded
 local Tabs = shared.TabLoaded
 print("section and tabs loaded")
-
-
-
---[[
-
 local win = kavo:CreateWindow({
     ["Title"] = "Aqura | Work At a Pizza Place",
     ["Theme"] = "Luna"
@@ -26,8 +21,13 @@ Sections = {
     ["InstantInteract"] = Tabs["Main"].CreateSection("Instant Interact")
     ["NTDCore"] = Tabs["Credits"].CreateSection("ty monia for kavo and instant interact!!!")
 }
-print("section created")
-print("test universal1")
+print("All Function Loaded")
+
+
+
+
+--[[
+
 
 
 

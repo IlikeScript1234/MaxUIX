@@ -1,6 +1,4 @@
 print("universal real")
---[[
-print("test universal1")
 local kavo = shared.kavolib
 print("kavo loaded")
 local Tabs = shared.TabLoaded
@@ -26,6 +24,10 @@ Sections = {
     ["NTDCore"] = Tabs["Credits"].CreateSection("ty monia for kavo and instant interact!!!")
 }
 print("section created")
+--[[
+print("test universal1")
+
+
 
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer

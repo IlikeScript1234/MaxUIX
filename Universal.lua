@@ -4,17 +4,18 @@
 
 
 local kavo = shared.kavolib
-
+print("kavo loaded")
 local Sections = shared.SectionsLoaded
+print("section loaded")
 local Tabs = shared.TabLoaded
-
+print("tab loaded")
 local InstantInteractConnection
 
 local win = kavo:CreateWindow({
-    ["Title"] = "Aqura | ".. name,
+    ["Title"] = "Aqura | Universal",
     ["Theme"] = "Luna"
   })
-  
+  print("tab created")
 local Tabs = {
     ["Main"] = win.CreateTab("Main"),
     ["Credits"] = win.CreateTab("Credits")
@@ -27,22 +28,14 @@ Sections = {
     ["InstantInteract"] = Tabs["Main"].CreateSection("Instant Interact")
     ["NTDCore"] = Tabs["Credits"].CreateSection("ty monia for kavo and instant interace!!!")
 }
-
-local networkownertick = tick()
-local isnetworkowner = isnetworkowner or function(part)
-  if gethiddenproperty(part, "NetworkOwnershipRule") == Enum.NetworkOwnership.Manual then 
-      sethiddenproperty(part, "NetworkOwnershipRule", Enum.NetworkOwnership.Automatic)
-      networkownertick = tick() + 8
-  end
-  return networkownertick <= tick()
-end
+print("section created")
 
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local chr = player.Character or player.CharacterAdded:Wait()
 local HumanoidRootPart = chr:WaitForChild("HumanoidRootPart")
 
-
+print("function loaded")
 
 local InfJump = {Enabled = false}
 InfJump = Sections["InfJump"].CreateToggle({

@@ -18,7 +18,7 @@ Tabs = {
 Sections = {
     ["InfJump"] = Tabs["Main"].CreateSection("Infinite Jump")
     ["Speed"] = Tabs["Main"].CreateSection("Speed"),
-    ["InstantInteract"] = Tabs["Main"].CreateSection("Instant Interact")
+    ["InstantInteract"] = Tabs["Main"].CreateSection("Instant Interact"),
     ["NTDCore"] = Tabs["Credits"].CreateSection("ty monia for kavo and instant interact!!!")
 }
 print("All Function Loaded")

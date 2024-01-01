@@ -83,12 +83,12 @@ print("all modules loaded")
 
 task.spawn(function()
     repeat task.wait()
-        if Aqura == false then
+        if shared.Aqura == false then
             Speed.Enabled = false  
 	    InstantInteractConnection:Disconnect()
 	    InfiniteJumpConnection:Disconnect()
         end
-    until Aqura == false
+    until shared.Aqura == false
 end)
     
 kavo:Notification("Kavo", "Aqura Has Been Loaded", 4)

@@ -5,16 +5,17 @@ local Sections = shared.SectionsLoaded
 local Tabs = shared.TabLoaded
 print("section and tabs loaded")
 local win = kavo:CreateWindow({
-    ["Title"] = "Aqura | Work At a Pizza Place",
+    ["Title"] = "Aqura | Universal",
     ["Theme"] = "Luna"
   })
   print("win created")
-Tabs = {
+local Tabs = {
     ["Main"] = win.CreateTab("Main"),
     ["Credits"] = win.CreateTab("Credits")
 }
   print("tab created")
 
+local Sections = shared.SectionsLoaded
 Sections = {
     ["InfJump"] = Tabs["Main"].CreateSection("Infinite Jump")
     ["Speed"] = Tabs["Main"].CreateSection("Speed"),

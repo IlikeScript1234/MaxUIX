@@ -195,5 +195,4 @@ Sections["Speed"].CreateSlider({
     end,
     HoverText = "Speed Value"
 })
-kavo:Notification("Kavo", "MaxUi Has Been Loaded", 4)
 kavo:Button()

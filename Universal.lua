@@ -22,15 +22,6 @@ Sections = {
     ["NTDCore"] = Tabs["Credits"].CreateSection("ty monia for kavo and instant interact!!!")
 }
 print("All Function Loaded")
-
-
-
-
---[[
-
-
-
-
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local chr = player.Character or player.CharacterAdded:Wait()
@@ -98,8 +89,19 @@ InstantInteract = Sections["InstantInteract"].CreateToggle({
         end
     end
 })
+
+print("all modules loaded")
 kavo:Button()
     
 --kavo:Notification("Kavo", "MaxUi Has Been Loaded", 4)
+
+
+
+
+--[[
+
+
+
+
 
 ]]

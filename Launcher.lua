@@ -1,4 +1,4 @@
-print("updated3")
+print("updated4")
 local kavo = loadstring(game:HttpGet("https://raw.githubusercontent.com/IlikeScript1234/MaxUIX/main/Libraries/kavo.lua", true))()
 print("1")
 shared.kavolib = kavo

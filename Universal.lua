@@ -29,6 +29,8 @@ local InstantInteractConnection
 
 print("function loaded")
 
+--[[
+local Humanoid =  game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass('Humanoid')
 local InfJump = {Enabled = false}
 InfJump = Sections["InfJump"].CreateToggle({
     Name = "Infinite Jump",
@@ -37,15 +39,16 @@ InfJump = Sections["InfJump"].CreateToggle({
         if callback then
             game:GetService("UserInputService").JumpRequest:connect(function()
                 if InfJump.Enabled then
-                    game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):ChangeState("Jumping")
+                   Humanoid:ChangeState("Jumping")
                 end
             end)
         end
     end,
-    HoverText = "U can jump unlimit"
+    HoverText = ""
 })
 
-local SpeedValue = {Value = 4}
+]]
+local SpeedValue = {Value = 14}
 local Speed = {Enabled = false}
 Speed = Sections["Speed"].CreateToggle({
     Name = "Speed",
@@ -53,11 +56,7 @@ Speed = Sections["Speed"].CreateToggle({
         Speed.Enabled = callback
         if callback then
             repeat task.wait()
-                local hrp = lplr.Character:FindFirstChild("HumanoidRootPart")
-                local hum = lplr.Character:FindFirstChild("Humanoid")
-                if isnetworkowner(hrp) and hum.MoveDirection.Magnitude > 0 then
-                    lplr.Character:TranslateBy(hum.MoveDirection * SpeedValue["Value"])
-                end
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = SpeedValue["Value"]
             until (not Speed.Enabled)
         end
     end,
@@ -66,8 +65,8 @@ Speed = Sections["Speed"].CreateToggle({
 Sections["Speed"].CreateSlider({
     Name = "Value",
     Min = 0,
-    Max = 5,
-    Default = 4,
+    Max = 100,
+    Default = 14,
     Function = function(val)
         SpeedValue["Value"] = val
     end,

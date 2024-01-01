@@ -1,4 +1,3 @@
-print("universal v6")
 local kavo = loadstring(game:HttpGet("https://raw.githubusercontent.com/IlikeScript1234/MaxUIX/main/Libraries/kavo.lua"))()
 local win = kavo:CreateWindow({
     ["Title"] = "Aqura | Universal",
@@ -19,7 +18,6 @@ local Sections = {
 local InputService = game:GetService("UserInputService")
 local PlayerService = game:GetService("Players")
 local lplr = PlayerService.LocalPlayer
-print("All Function Loaded")
    	local InfiniteJumpConnection
 	local InfiniteJump = {Enabled = false}
 	InfiniteJump = Sections["InfJump"].CreateToggle({

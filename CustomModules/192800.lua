@@ -194,3 +194,12 @@ Sections["Speed"].CreateSlider({
     HoverText = "Speed Value"
 })
 
+task.spawn(function()
+    repeat task.wait()
+        if Aqura == false than
+            Speed.Enabled = false  
+        end
+    until Aqura == false
+end
+                                
+kavo:Notification("Kavo", "Aqura Has Been Loaded", 4)

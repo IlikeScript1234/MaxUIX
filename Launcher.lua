@@ -1,12 +1,13 @@
+print("updated1")
 local kavo = loadstring(game:HttpGet("https://raw.githubusercontent.com/IlikeScript1234/MaxUIX/main/Libraries/kavo.lua", true))()
 shared.kavolib = kavo
-
+print("2")
 local defaultkavo = loadstring(game:HttpGet("https://raw.githubusercontent.com/MaxlaserTechAlt/MaxlaserTechAlt.github.io/main/KavoCustom.lua", true))()
 shared.defaultkavolib = defaultkavo
-
+print("3")
 local Sections = {}
 shared.SectionsLoaded = Sections
-
+print("4")
 local Tabs = {}
 shared.TabLoaded = Tabs
 
@@ -75,7 +76,7 @@ end
 task.spawn(function()
     local textlabel = Instance.new("TextLabel")
     textlabel.Size = UDim2.new(1, 0, 0, 36)
-    textlabel.Text = "Downloading MaxUiX"
+    textlabel.Text = "Downloading Aqura"
     textlabel.BackgroundTransparency = 1
     textlabel.TextStrokeTransparency = 0
     textlabel.TextSize = 30
@@ -83,7 +84,7 @@ task.spawn(function()
     textlabel.TextColor3 = Color3.new(1, 1, 1)
     textlabel.Position = UDim2.new(0, 0, 0, -36)
     textlabel.Parent = game.CoreGui
-    repeat task.wait() until isfile("MaxUiX")
+    repeat task.wait() until isfile("Aqura")
     textlabel:Remove()
 end)
 makefolder("Aqura")
@@ -93,10 +94,10 @@ MaxUiFolder("CustomModules")
 MaxUiFolder("Profiles")
 MaxUiFile("CustomModules/".. game.PlaceId)
 local Universal = [[
+    print("execute universal")
     loadstring(game:HttpGet("https://raw.githubusercontent.com/IlikeScript1234/MaxUIX/main/Universal.lua"))()
 ]]
 MaxUiJson("Profiles/Universal")
-MaxUiJson("Profiles/Bedwars")
 function MainLoaded()
     local customModuleURL = "https://raw.githubusercontent.com/IlikeScript1234/MaxUIX/main/CustomModules/"..game.PlaceId..".lua"
     local customModuleScript = game:HttpGet(customModuleURL, true)

@@ -40,7 +40,7 @@ function kavo:DraggingEnabled(frame, parent)
         if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
             dragInput = input
         end
-    end) end)
+    end)
 end
 
 function Utility:TweenObject(obj, properties, duration, ...)
@@ -54,6 +54,7 @@ shared.KavoLoaded = true
             local delta = input.Position - mousePos
             parent.Position  = UDim2.new(framePos.X.Scale, framePos.X.Offset + delta.X, framePos.Y.Scale, framePos.Y.Offset + delta.Y)
         end
+    end)
    
 local themes = {
     SchemeColor = Color3.fromRGB(74, 99, 135),

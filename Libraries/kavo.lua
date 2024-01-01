@@ -1,4 +1,5 @@
 -- thanks monia for the argstable kavo i change little bit
+
 local kavo = {
     ["ToggleUi"] = Enum.KeyCode.Insert,
     ["WarningNotification"] = true
@@ -39,14 +40,7 @@ function kavo:DraggingEnabled(frame, parent)
         if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
             dragInput = input
         end
-    end)
-
-    input.InputChanged:Connect(function(input)
-        if input == dragInput and dragging then
-            local delta = input.Position - mousePos
-            parent.Position  = UDim2.new(framePos.X.Scale, framePos.X.Offset + delta.X, framePos.Y.Scale, framePos.Y.Offset + delta.Y)
-        end
-    end)
+    end) end)
 end
 
 function Utility:TweenObject(obj, properties, duration, ...)
@@ -54,6 +48,13 @@ function Utility:TweenObject(obj, properties, duration, ...)
 end
 
 shared.KavoLoaded = true
+
+    input.InputChanged:Connect(function(input)
+        if input == dragInput and dragging then
+            local delta = input.Position - mousePos
+            parent.Position  = UDim2.new(framePos.X.Scale, framePos.X.Offset + delta.X, framePos.Y.Scale, framePos.Y.Offset + delta.Y)
+        end
+   
 local themes = {
     SchemeColor = Color3.fromRGB(74, 99, 135),
     Background = Color3.fromRGB(36, 37, 43),
@@ -148,6 +149,7 @@ local SettingsT = {
 }
 
 local Name = "kavoConfig.JSON"
+local Aqura = true
 
 pcall(function()
 
@@ -400,6 +402,7 @@ function kavo:CreateWindow(argstable)
         }):Play()
         wait(1)
         shared.KavoLoaded = false
+	Aqura = false
         ScreenGui:Destroy()
         NewBlur:Destroy()
     end)

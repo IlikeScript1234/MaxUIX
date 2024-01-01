@@ -1,4 +1,4 @@
-print("universal v4")
+print("universal v4.5")
 local kavo = loadstring(game:HttpGet("https://raw.githubusercontent.com/IlikeScript1234/MaxUIX/main/Libraries/kavo.lua"))()
 print("library loaded")
 print("section and tabs loaded")
@@ -19,7 +19,7 @@ local Tabs = {
     ["InstantInteract"] = Tabs["Main"].CreateSection("Instant Interact"),
 ]]
 local Sections = {
-    ["InfJump"] = Tabs["Main"].CreateSection("Infinite Jump")
+    ["InfJump"] = Tabs["Main"].CreateSection("Infinite Jump"),
     ["NTDCore"] = Tabs["Credits"].CreateSection("ty monia for kavo and instant interact!!!")
 }
 print("All Function Loaded")

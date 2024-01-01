@@ -45,6 +45,8 @@ Speed = Sections["Speed"].CreateToggle({
         if callback then
             repeat task.wait()
                   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = SpeedValue.Value
+	else
+                  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
             until (not Speed.Enabled)
         end
     end,
@@ -85,6 +87,7 @@ task.spawn(function()
             Speed.Enabled = false  
 	    InstantInteractConnection:Disconnect()
 	    InfiniteJumpConnection:Disconnect()
+	    lplr.Character.Humanoid.WalkSpeed = 16
         end
     until shared.Aqura == false
 end)

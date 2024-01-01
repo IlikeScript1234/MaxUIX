@@ -1,5 +1,5 @@
 local kavo = shared.kavolib
-
+print("library loaded")
 local Sections = shared.SectionsLoaded
 local Tabs = shared.TabLoaded
 
@@ -8,12 +8,12 @@ local win = kavo:CreateWindow({
     ["Title"] = "Aqura | Work At a Pizza Place",
     ["Theme"] = "Luna"
   })
-  
+  print("win created")
 local Tabs = {
     ["Main"] = win.CreateTab("Main"),
     ["Credits"] = win.CreateTab("Credits")
 }
-  
+  print("tab created")
 local Sections = shared.SectionsLoaded
 Sections = {
     ["TrollMenu"] = Tabs["Main"].CreateSection("TrollMenu"),
@@ -21,7 +21,7 @@ Sections = {
     ["Speed"] = Tabs["Main"].CreateSection("Speed"),
     ["NTDCore"] = Tabs["Credits"].CreateSection("Monia: Argstable Lib, Cfgs, theme")
 }
-
+print("section created")
 kavo:Button()
 
 local Players = game:GetService("Players")

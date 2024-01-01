@@ -18,7 +18,7 @@ if AutoLeave == true then
 end
 
 local win = kavo:CreateWindow({
-    ["Title"] = "MaxUi X | ".. name,
+    ["Title"] = "Aqura | ".. name,
     ["Theme"] = "Luna"
   })
   

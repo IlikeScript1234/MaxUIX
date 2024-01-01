@@ -108,9 +108,9 @@ function MainLoaded()
         if not success then
             local customModuleWeb = "https://raw.githubusercontent.com/IlikeScript1234/MaxUIX/main/Universal.lua"
             local customModuleCoding = game:HttpGet(customModuleWeb, true)
-            warn("Failed To Loaded Modules: " .. tostring(error))
             MaxUiFile("Universal", customModuleCoding)
             loadstring(Universal)()
+            warn("Failed To Loaded Modules: " .. tostring(error))
         end
     else
         local customModuleUniversal = "https://raw.githubusercontent.com/IlikeScript1234/MaxUIX/main/Universal.lua"

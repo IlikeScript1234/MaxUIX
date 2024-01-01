@@ -22,6 +22,7 @@ Sections = {
     ["NTDCore"] = Tabs["Credits"].CreateSection("ty monia for kavo and instant interact!!!")
 }
 print("All Function Loaded")
+--[[
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local chr = player.Character or player.CharacterAdded:Wait()

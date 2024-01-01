@@ -4,12 +4,10 @@
 
 
 local kavo = shared.kavolib
-kavo:Button()
+
 local Sections = shared.SectionsLoaded
 local Tabs = shared.TabLoaded
-local FunctionsLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/NTDCore/NightbedForRoblox/main/Libraries/FunctionsHandler.lua"))()
-local name = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
-local AutoLeave = false
+
 local InstantInteractConnection
 
 local win = kavo:CreateWindow({
@@ -105,5 +103,6 @@ InstantInteract = Sections["InstantInteract"].CreateToggle({
         end
     end
 })
-
-kavo:Notification("Kavo", "MaxUi Has Been Loaded", 4)
+kavo:Button()
+    
+--kavo:Notification("Kavo", "MaxUi Has Been Loaded", 4)

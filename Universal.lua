@@ -45,9 +45,9 @@ Speed = Sections["Speed"].CreateToggle({
         if callback then
             repeat task.wait()
                   lplr.Character.Humanoid.WalkSpeed = SpeedValue.Value
-	else
-                  lplr.Character.Humanoid.WalkSpeed = 16
             until (not Speed.Enabled)
+	else
+	     lplr.Character.Humanoid.WalkSpeed = 16
         end
     end,
     HoverText = "Speeding"

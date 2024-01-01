@@ -177,7 +177,8 @@ end
 
 function kavo:Button()
     task.spawn(function()
-	    local screenGui = Instance.new("screenGuiM")
+	    local screenGui = Instance.new("ScreenGui")
+	    screenGui.Name = "screenGuiM"
 	    screenGui.Parent = game.CoreGui
 	    
 	    local button = Instance.new("TextButton")

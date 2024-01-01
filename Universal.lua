@@ -81,6 +81,11 @@ InstantInteract = Sections["InstantInteract"].CreateToggle({
 
 print("all modules loaded")
 
+if Aqura == false than
+	Speed.Enabled = false
+	InstantInteractConnection:Disconnect()
+	InfiniteJumpConnection:Disconnect()
+end
     
---kavo:Notification("Kavo", "MaxUi Has Been Loaded", 4)
+kavo:Notification("Kavo", "MaxUi Has Been Loaded", 4)
 

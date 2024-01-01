@@ -1,8 +1,5 @@
 print("universal v5")
 local kavo = loadstring(game:HttpGet("https://raw.githubusercontent.com/IlikeScript1234/MaxUIX/main/Libraries/kavo.lua"))()
-print("library loaded")
-print("section and tabs loaded")
-wait(1)
 local win = kavo:CreateWindow({
     ["Title"] = "Aqura | Universal",
     ["Theme"] = "Luna"
@@ -12,8 +9,6 @@ local Tabs = {
     ["Main"] = win.CreateTab("Main"),
     ["Credits"] = win.CreateTab("Credits")
 }
-  print("tab created")
-
 --[[
     ["Speed"] = Tabs["Main"].CreateSection("Speed"),
     ["InstantInteract"] = Tabs["Main"].CreateSection("Instant Interact"),
@@ -22,10 +17,11 @@ local Sections = {
     ["InfJump"] = Tabs["Main"].CreateSection("Infinite Jump"),
     ["NTDCore"] = Tabs["Credits"].CreateSection("ty monia for kavo and instant interact!!!")
 }
+local InputService = game:GetService("UserInputService")
+local PlayerService = game:GetService("Players")
+local lplr = PlayerService.LocalPlayer
 print("All Function Loaded")
-print("function loaded")
-wait(1)
-    local InfiniteJumpConnection
+   	local InfiniteJumpConnection
 	local InfiniteJump = {Enabled = false}
 	InfiniteJump = Sections["InfJump"].CreateToggle({
 		Name = "InfiniteJump",

@@ -81,11 +81,15 @@ InstantInteract = Sections["InstantInteract"].CreateToggle({
 
 print("all modules loaded")
 
-if Aqura == false than
-	Speed.Enabled = false
-	InstantInteractConnection:Disconnect()
-	InfiniteJumpConnection:Disconnect()
+task.spawn(function()
+    repeat task.wait()
+        if Aqura == false than
+            Speed.Enabled = false  
+	    InstantInteractConnection:Disconnect()
+	    InfiniteJumpConnection:Disconnect()
+        end
+    until Aqura == false
 end
     
-kavo:Notification("Kavo", "MaxUi Has Been Loaded", 4)
+kavo:Notification("Kavo", "Aqura Has Been Loaded", 4)
 

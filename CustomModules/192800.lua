@@ -169,7 +169,7 @@ Sections["Menu"].CreateButton({
     HoverText = "was not made by me"
 })
 
-local SpeedValue = {Value = 4}
+local SpeedValue = {Value = 14}
 local Speed = {Enabled = false}
 Speed = Sections["Speed"].CreateToggle({
     Name = "Speed",
@@ -186,8 +186,8 @@ Speed = Sections["Speed"].CreateToggle({
 Sections["Speed"].CreateSlider({
     Name = "Value",
     Min = 0,
-    Max = 5,
-    Default = 4,
+    Max = 500,
+    Default = 14,
     Function = function(val)
         SpeedValue["Value"] = val
     end,

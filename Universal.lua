@@ -1,12 +1,13 @@
 print("universal real")
 local kavo = shared.kavolib
 print("library loaded")
-local Sections = shared.SectionsLoaded
-local Tabs = shared.TabLoaded
+
 
 
 
 --[[
+local Sections = shared.SectionsLoaded
+local Tabs = shared.TabLoaded
 local win = kavo:CreateWindow({
     ["Title"] = "Aqura | Work At a Pizza Place",
     ["Theme"] = "Luna"

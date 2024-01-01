@@ -1,5 +1,4 @@
 local kavo = shared.kavolib
-kavo:Button()
 local Sections = shared.SectionsLoaded
 local Tabs = shared.TabLoaded
 local FunctionsLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/NTDCore/NightbedForRoblox/main/Libraries/FunctionsHandler.lua"))()
@@ -73,3 +72,4 @@ Sections["Speed"].CreateSlider({
     HoverText = "Speed Value"
 })
 kavo:Notification("Kavo", "MaxUI X Has Been Loaded", 4)
+kavo:Button()

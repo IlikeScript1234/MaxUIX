@@ -1,4 +1,4 @@
-print("updated1")
+print("updated2")
 local kavo = loadstring(game:HttpGet("https://raw.githubusercontent.com/IlikeScript1234/MaxUIX/main/Libraries/kavo.lua", true))()
 shared.kavolib = kavo
 print("2")
@@ -96,6 +96,7 @@ MaxUiFile("CustomModules/".. game.PlaceId)
 local Universal = [[
     print("execute universal")
     loadstring(game:HttpGet("https://raw.githubusercontent.com/IlikeScript1234/MaxUIX/main/Universal.lua"))()
+    print("execute2 universal")
 ]]
 MaxUiJson("Profiles/Universal")
 function MainLoaded()

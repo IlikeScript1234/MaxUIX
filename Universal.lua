@@ -1,3 +1,5 @@
+print("universal real")
+--[[
 print("test universal1")
 local kavo = shared.kavolib
 print("kavo loaded")
@@ -95,3 +97,5 @@ InstantInteract = Sections["InstantInteract"].CreateToggle({
 kavo:Button()
     
 --kavo:Notification("Kavo", "MaxUi Has Been Loaded", 4)
+
+]]

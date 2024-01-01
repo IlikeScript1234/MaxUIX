@@ -1,4 +1,4 @@
-print("universal v5.5")
+print("universal v6")
 local kavo = loadstring(game:HttpGet("https://raw.githubusercontent.com/IlikeScript1234/MaxUIX/main/Libraries/kavo.lua"))()
 local win = kavo:CreateWindow({
     ["Title"] = "Aqura | Universal",
@@ -9,12 +9,11 @@ local Tabs = {
     ["Main"] = win.CreateTab("Main"),
     ["Credits"] = win.CreateTab("Credits")
 }
---[[
-    ["Speed"] = Tabs["Main"].CreateSection("Speed"),
-    ["InstantInteract"] = Tabs["Main"].CreateSection("Instant Interact"),
-]]
+
 local Sections = {
     ["InfJump"] = Tabs["Main"].CreateSection("Infinite Jump"),
+    ["Speed"] = Tabs["Main"].CreateSection("Speed"),
+    ["InstantInteract"] = Tabs["Main"].CreateSection("Instant Interact"),
     ["NTDCore"] = Tabs["Credits"].CreateSection("ty monia for kavo and instant interact!!!")
 }
 local InputService = game:GetService("UserInputService")
@@ -38,13 +37,13 @@ print("All Function Loaded")
 		end
 	})
     kavo:Button()
---[[
+
 local SpeedValue = {Value = 14}
 local Speed = {Enabled = false}
 Speed = Sections["Speed"].CreateToggle({
     Name = "Speed",
     Function = function(callback)
-        Speed.Enabled = callback
+        Speed["Enabled"] = callback
         if callback then
             repeat task.wait()
                   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = SpeedValue.Value
@@ -69,7 +68,7 @@ local InstantInteract = {Enabled = false}
 InstantInteract = Sections["InstantInteract"].CreateToggle({
     Name = "InstantInteract",
     Function = function(callback)
-        Settings["InstantInteract"] = callback
+	InstantInteract["Enabled"] = callback
         if callback then
             InstantInteractConnection = game:GetService("ProximityPromptService").PromptButtonHoldBegan:Connect(function(prompt)
                 fireproximityprompt(prompt)

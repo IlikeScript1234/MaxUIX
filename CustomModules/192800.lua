@@ -196,7 +196,7 @@ Sections["Speed"].CreateSlider({
 
 task.spawn(function()
     repeat task.wait()
-        if Aqura == false than
+        if Aqura == false then
             Speed.Enabled = false  
         end
     until Aqura == false

@@ -1,4 +1,4 @@
-print("universal v3")
+print("universal v4")
 local kavo = loadstring(game:HttpGet("https://raw.githubusercontent.com/IlikeScript1234/MaxUIX/main/Libraries/kavo.lua"))()
 print("library loaded")
 print("section and tabs loaded")
@@ -14,31 +14,33 @@ local Tabs = {
 }
   print("tab created")
 
-local Sections = {
-    ["InfJump"] = Tabs["Main"].CreateSection("Infinite Jump")
+--[[
     ["Speed"] = Tabs["Main"].CreateSection("Speed"),
     ["InstantInteract"] = Tabs["Main"].CreateSection("Instant Interact"),
+]]
+local Sections = {
+    ["InfJump"] = Tabs["Main"].CreateSection("Infinite Jump")
     ["NTDCore"] = Tabs["Credits"].CreateSection("ty monia for kavo and instant interact!!!")
 }
 print("All Function Loaded")
 print("function loaded")
 wait(1)
-local Humanoid =  game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass('Humanoid')
-local InfJump = {Enabled = false}
-InfJump = Sections["InfJump"].CreateToggle({
-    Name = "Infinite Jump",
-    Function = function(callback)
-        InfJump.Enabled = callback
-        if callback then
-            game:GetService("UserInputService").JumpRequest:connect(function()
-                if InfJump.Enabled then
-                   Humanoid:ChangeState("Jumping")
-                end
-            end)
-        end
-    end,
-    HoverText = ""
-})
+    local InfiniteJumpConnection
+	local InfiniteJump = {Enabled = false}
+	InfiniteJump = Sections["InfJump"].CreateToggle({
+		Name = "InfiniteJump",
+		Function = function(callback)
+			if callback then
+				spawn(function()
+					InfiniteJumpConnection = InputService.JumpRequest:connect(function(jump)
+						game.Players.LocalPlayer.Character.Humanoid:ChangeState("Jumping")
+					end)
+				end)
+			else
+				InfiniteJumpConnection:Disconnect()
+			end
+		end
+	})
     kavo:Button()
 --[[
 local SpeedValue = {Value = 14}

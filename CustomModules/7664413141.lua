@@ -20,16 +20,6 @@ Sections = {
     ["Speed"] = Tabs["Main"].CreateSection("Speed"),
     ["NTDCore"] = Tabs["Credits"].CreateSection("Monia: Argstable Lib, Cfgs, theme")
 }
-
-local networkownertick = tick()
-local isnetworkowner = isnetworkowner or function(part)
-  if gethiddenproperty(part, "NetworkOwnershipRule") == Enum.NetworkOwnership.Manual then 
-      sethiddenproperty(part, "NetworkOwnershipRule", Enum.NetworkOwnership.Automatic)
-      networkownertick = tick() + 8
-  end
-  return networkownertick <= tick()
-end
-
 local AutoFarm = {Enabled = false}
 AutoFarm = Sections["AutoFarm"].CreateToggle({
     Name = "AutoFarm",
@@ -43,7 +33,7 @@ AutoFarm = Sections["AutoFarm"].CreateToggle({
     end,
     HoverText = "AutoFarming When you in a human team"
 })
-local SpeedValue = {Value = 4}
+local SpeedValue = {Value = 14}
 local Speed = {Enabled = false}
 Speed = Sections["Speed"].CreateToggle({
     Name = "Speed",
@@ -51,11 +41,7 @@ Speed = Sections["Speed"].CreateToggle({
         Speed.Enabled = callback
         if callback then
             repeat task.wait()
-                local hrp = lplr.Character:FindFirstChild("HumanoidRootPart")
-                local hum = lplr.Character:FindFirstChild("Humanoid")
-                if isnetworkowner(hrp) and hum.MoveDirection.Magnitude > 0 then
-                    lplr.Character:TranslateBy(hum.MoveDirection * SpeedValue["Value"])
-                end
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = SpeedValue
             until (not Speed.Enabled)
         end
     end,
@@ -63,9 +49,9 @@ Speed = Sections["Speed"].CreateToggle({
 })
 Sections["Speed"].CreateSlider({
     Name = "Value",
-    Min = 0,
-    Max = 5,
-    Default = 3,
+    Min = 1,
+    Max = 200,
+    Default = 14,
     Function = function(val)
         SpeedValue["Value"] = val
     end,

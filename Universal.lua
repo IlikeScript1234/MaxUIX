@@ -89,7 +89,7 @@ task.spawn(function()
 	    InfiniteJumpConnection:Disconnect()
         end
     until Aqura == false
-end
+end)
     
 kavo:Notification("Kavo", "Aqura Has Been Loaded", 4)
 

@@ -1,4 +1,4 @@
-print("universal v4.5")
+print("universal v5")
 local kavo = loadstring(game:HttpGet("https://raw.githubusercontent.com/IlikeScript1234/MaxUIX/main/Libraries/kavo.lua"))()
 print("library loaded")
 print("section and tabs loaded")
@@ -51,16 +51,16 @@ Speed = Sections["Speed"].CreateToggle({
         Speed.Enabled = callback
         if callback then
             repeat task.wait()
-                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = SpeedValue["Value"]
+                  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = SpeedValue.Value
             until (not Speed.Enabled)
         end
     end,
-    HoverText = "Make you go faster!"
+    HoverText = "Speeding"
 })
 Sections["Speed"].CreateSlider({
     Name = "Value",
     Min = 0,
-    Max = 100,
+    Max = 500,
     Default = 14,
     Function = function(val)
         SpeedValue["Value"] = val

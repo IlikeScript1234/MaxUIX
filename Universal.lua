@@ -1,8 +1,6 @@
 print("universal real")
-local kavo = shared.kavolib
+local kavo = loadstring(game:HttpGet("https://raw.githubusercontent.com/IlikeScript1234/MaxUIX/main/Libraries/kavo.lua"))()
 print("library loaded")
-local Sections = shared.SectionsLoaded
-local Tabs = shared.TabLoaded
 print("section and tabs loaded")
 local win = kavo:CreateWindow({
     ["Title"] = "Aqura | Universal",
@@ -15,15 +13,14 @@ local Tabs = {
 }
   print("tab created")
 
-local Sections = shared.SectionsLoaded
-Sections = {
+local Sections = {
     ["InfJump"] = Tabs["Main"].CreateSection("Infinite Jump")
     ["Speed"] = Tabs["Main"].CreateSection("Speed"),
     ["InstantInteract"] = Tabs["Main"].CreateSection("Instant Interact"),
     ["NTDCore"] = Tabs["Credits"].CreateSection("ty monia for kavo and instant interact!!!")
 }
 print("All Function Loaded")
---[[
+
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local chr = player.Character or player.CharacterAdded:Wait()
@@ -97,13 +94,3 @@ kavo:Button()
     
 --kavo:Notification("Kavo", "MaxUi Has Been Loaded", 4)
 
-
-
-
---[[
-
-
-
-
-
-]]

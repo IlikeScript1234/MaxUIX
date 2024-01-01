@@ -95,8 +95,8 @@ MaxUiFolder("Profiles")
 MaxUiFile("CustomModules/".. game.PlaceId)
 local Universal = [[
     print("execute universal")
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/IlikeScript1234/MaxUIX/main/Universal.lua"))()
-    print("execute2 universal")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/IlikeScript1234/MaxUIX/main/Universal.lua", true))()
+
 ]]
 MaxUiJson("Profiles/Universal")
 function MainLoaded()

@@ -4,18 +4,7 @@ local Sections = shared.SectionsLoaded
 local Tabs = shared.TabLoaded
 local FunctionsLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/NTDCore/NightbedForRoblox/main/Libraries/FunctionsHandler.lua"))()
 local name = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
-local AutoLeave = false
-if AutoLeave == true then
-    local Players = game:GetService("Players")
-    local GroupId = 17449
-    
-    Players.PlayerAdded:Connect(function(player)
-        local playerRank = player:GetRankInGroup(GroupId)
-        if playerRank == 254 or 255 then
-            game.Players.LocalPlayer:Kick("Staff In The Server Detected")
-        end
-    end)
-end
+
 
 local win = kavo:CreateWindow({
     ["Title"] = "Aqura | ".. name,
@@ -35,14 +24,7 @@ Sections = {
     ["NTDCore"] = Tabs["Credits"].CreateSection("Monia: Argstable Lib, Cfgs, theme")
 }
 
-local networkownertick = tick()
-local isnetworkowner = isnetworkowner or function(part)
-  if gethiddenproperty(part, "NetworkOwnershipRule") == Enum.NetworkOwnership.Manual then 
-      sethiddenproperty(part, "NetworkOwnershipRule", Enum.NetworkOwnership.Automatic)
-      networkownertick = tick() + 8
-  end
-  return networkownertick <= tick()
-end
+
 
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
@@ -58,7 +40,6 @@ CarCrasher = Sections["TrollMenu"].CreateToggle({
     Name = "CarCrasher",
     Function = function(callback)
         CarCrasher.Enabled = callback
-        funcslib.displayErrorPopup("Warning", "Execute Infinite Yield And Use Fly Commands", "Okay!") 
         repeat task.wait(0.15)
             for i, v in pairs(CarModels) do
                 if v.ClassName ~= "Model" then
@@ -181,14 +162,6 @@ Sections["TrollMenu"].CreateButton({
 })
 
 
-Sections["TrollMenu"].CreateTextBox({
-    Name = "Kill Player",
-    Function = function(txt)
-        destroy:FireServer(Players:FindFirstChild(txt).Character.Head,"call")
-    end,
-    HoverText = "killing player"
-})
-
 local destroy = Workspace.GameService.CloseBox
 Sections["Menu"].CreateButton({
     Name = "AutoFarmMenu",
@@ -206,11 +179,7 @@ Speed = Sections["Speed"].CreateToggle({
         Speed.Enabled = callback
         if callback then
             repeat task.wait()
-                local hrp = lplr.Character:FindFirstChild("HumanoidRootPart")
-                local hum = lplr.Character:FindFirstChild("Humanoid")
-                if isnetworkowner(hrp) and hum.MoveDirection.Magnitude > 0 then
-                    lplr.Character:TranslateBy(hum.MoveDirection * SpeedValue["Value"])
-                end
+                  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = SpeedValue.Value
             until (not Speed.Enabled)
         end
     end,

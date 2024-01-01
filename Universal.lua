@@ -83,7 +83,7 @@ print("all modules loaded")
 
 task.spawn(function()
     repeat task.wait()
-        if Aqura == false than
+        if Aqura == false then
             Speed.Enabled = false  
 	    InstantInteractConnection:Disconnect()
 	    InfiniteJumpConnection:Disconnect()

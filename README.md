@@ -4,7 +4,7 @@
 
 # Script:
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/IlikeScript1234/MaxUIX/main/MainScript.lua", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/IlikeScript1234/MaxUIX/main/Launcher.lua", true))()
 ```
 
 # Contacts : 

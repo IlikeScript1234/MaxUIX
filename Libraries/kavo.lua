@@ -401,6 +401,7 @@ function kavo:Notification(name, text, duration)
 		script.Parent.NotificationHolder.Notification.TimeBar.FullTimeBar:TweenSize(UDim2.new(0, 0,1.25, 0), Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, duration)
 		task.wait(duration)
 		script.Parent.NotificationHolder.Notification:TweenPosition(UDim2.new(0.8, 0,0.002, 0), Enum.EasingDirection.InOut, Enum.EasingStyle.Quint, 1)
+		task.wait(1)
 		NotificationHolder:Destroy()
 	end
 	coroutine.wrap(GORS_fake_script)()

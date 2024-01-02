@@ -198,59 +198,213 @@ function kavo:Button()
     end)
 end
 
-local Notification = Instance.new("ScreenGui")
-Notification.Name = "Notification"
-Notification.Parent = game.CoreGui
+local NotificationGui = Instance.new("ScreenGui")
+NotificationGui.Name = "NotificationGui"
+NotificationGui.Parent = game.CoreGui
 function kavo:Notification(name, text, duration)
     if kavo["WarningNotification"] == true then
-        local Frame = Instance.new("Frame")
-        Frame.Parent = Notification
-        Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Frame.BackgroundTransparency = 0.100
-        Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-        Frame.BorderSizePixel = 0
-        Frame.Position = UDim2.new(1.06269598, 0, 0.755999982, 0)
-        Frame.Size = UDim2.new(0, 372, 0, 136)
+	local NotificationHolder = Instance.new("Frame")
+	local Notification = Instance.new("Frame")
+	local UICorner = Instance.new("UICorner")
+	local shadowHolder = Instance.new("Frame")
+	local ambientShadow = Instance.new("ImageLabel")
+	local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local umbraShadow = Instance.new("ImageLabel")
+	local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
+	local penumbraShadow = Instance.new("ImageLabel")
+	local UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
+	local UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
+	local Info = Instance.new("TextLabel")
+	local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
+	local UIAspectRatioConstraint_5 = Instance.new("UIAspectRatioConstraint")
+	local TimeBar = Instance.new("Frame")
+	local UICorner_2 = Instance.new("UICorner")
+	local FullTimeBar = Instance.new("Frame")
+	local UICorner_3 = Instance.new("UICorner")
+	local UIAspectRatioConstraint_6 = Instance.new("UIAspectRatioConstraint")
+	local Text = Instance.new("TextLabel")
+	local UIAspectRatioConstraint_7 = Instance.new("UIAspectRatioConstraint")
+	local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint")
+	local UIGradient = Instance.new("UIGradient")
+	local UIAspectRatioConstraint_8 = Instance.new("UIAspectRatioConstraint")
+	local UIAspectRatioConstraint_9 = Instance.new("UIAspectRatioConstraint")
+	local UIAspectRatioConstraint_10 = Instance.new("UIAspectRatioConstraint")
+	
+	NotificationHolder.Name = "NotificationHolder"
+	NotificationHolder.Parent = NotificationGui
+	NotificationHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	NotificationHolder.BackgroundTransparency = 1.000
+	NotificationHolder.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	NotificationHolder.BorderSizePixel = 0
+	NotificationHolder.Position = UDim2.new(0.914285719, 0, 0.660167158, 0)
+	NotificationHolder.Size = UDim2.new(0.136054426, 0, 0.278551519, 0)
+	
+	Notification.Name = "Notification"
+	Notification.Parent = NotificationHolder
+	Notification.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Notification.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Notification.BorderSizePixel = 0
+	Notification.Position = UDim2.new(0.800000012, 0, 0.00200000009, 0)
+	Notification.Size = UDim2.new(2, 0, 1.00000012, 0)
+	
+	UICorner.Parent = Notification
+	
+	shadowHolder.Name = "shadowHolder"
+	shadowHolder.Parent = Notification
+	shadowHolder.BackgroundTransparency = 1.000
+	shadowHolder.Position = UDim2.new(-0.0422708131, 0, -0.0702676401, 0)
+	shadowHolder.Size = UDim2.new(1.08414125, 0, 1.12166202, 0)
+	shadowHolder.ZIndex = 0
+	
+	ambientShadow.Name = "ambientShadow"
+	ambientShadow.Parent = shadowHolder
+	ambientShadow.AnchorPoint = Vector2.new(0.5, 0.5)
+	ambientShadow.BackgroundTransparency = 1.000
+	ambientShadow.Position = UDim2.new(0.5, 0, 0.51783067, 0)
+	ambientShadow.Size = UDim2.new(1.01844776, 0, 1.03566122, 0)
+	ambientShadow.ZIndex = 0
+	ambientShadow.Image = "rbxassetid://1316045217"
+	ambientShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	ambientShadow.ImageTransparency = 0.880
+	ambientShadow.ScaleType = Enum.ScaleType.Slice
+	ambientShadow.SliceCenter = Rect.new(10, 10, 118, 118)
+	
+	UIAspectRatioConstraint.Parent = ambientShadow
+	UIAspectRatioConstraint.AspectRatio = 1.901
+	
+	umbraShadow.Name = "umbraShadow"
+	umbraShadow.Parent = shadowHolder
+	umbraShadow.AnchorPoint = Vector2.new(0.5, 0.5)
+	umbraShadow.BackgroundTransparency = 1.000
+	umbraShadow.Position = UDim2.new(0.5, 0, 0.51783067, 0)
+	umbraShadow.Size = UDim2.new(1.01844776, 0, 1.03566134, 0)
+	umbraShadow.ZIndex = 0
+	umbraShadow.Image = "rbxassetid://1316045217"
+	umbraShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	umbraShadow.ImageTransparency = 0.860
+	umbraShadow.ScaleType = Enum.ScaleType.Slice
+	umbraShadow.SliceCenter = Rect.new(10, 10, 118, 118)
+	
+	UIAspectRatioConstraint_2.Parent = umbraShadow
+	UIAspectRatioConstraint_2.AspectRatio = 1.901
+	
+	penumbraShadow.Name = "penumbraShadow"
+	penumbraShadow.Parent = shadowHolder
+	penumbraShadow.AnchorPoint = Vector2.new(0.5, 0.5)
+	penumbraShadow.BackgroundTransparency = 1.000
+	penumbraShadow.Position = UDim2.new(0.5, 0, 0.51783067, 0)
+	penumbraShadow.Size = UDim2.new(1.01844776, 0, 1.03566134, 0)
+	penumbraShadow.ZIndex = 0
+	penumbraShadow.Image = "rbxassetid://1316045217"
+	penumbraShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	penumbraShadow.ImageTransparency = 0.880
+	penumbraShadow.ScaleType = Enum.ScaleType.Slice
+	penumbraShadow.SliceCenter = Rect.new(10, 10, 118, 118)
+	
+	UIAspectRatioConstraint_3.Parent = penumbraShadow
+	UIAspectRatioConstraint_3.AspectRatio = 1.901
+	
+	UIAspectRatioConstraint_4.Parent = shadowHolder
+	UIAspectRatioConstraint_4.AspectRatio = 1.933
+	
+	Info.Name = "Info"
+	Info.Parent = Notification
+	Info.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Info.BackgroundTransparency = 1.000
+	Info.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Info.BorderSizePixel = 0
+	Info.Position = UDim2.new(0.0648565665, 0, 0.130045325, 0)
+	Info.Size = UDim2.new(0.930000007, 0, 0.350000024, 0)
+	Info.Font = Enum.Font.GothamBold
+	Info.Text = name or "Info"
+	Info.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Info.TextScaled = true
+	Info.TextSize = 15.000
+	Info.TextWrapped = true
+	Info.TextXAlignment = Enum.TextXAlignment.Left
+	Info.TextYAlignment = Enum.TextYAlignment.Top
+	
+	UITextSizeConstraint.Parent = Info
+	UITextSizeConstraint.MaxTextSize = 15
+	
+	UIAspectRatioConstraint_5.Parent = Info
+	UIAspectRatioConstraint_5.AspectRatio = 5.314
+	
+	TimeBar.Name = "TimeBar"
+	TimeBar.Parent = Notification
+	TimeBar.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+	TimeBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TimeBar.BorderSizePixel = 0
+	TimeBar.Position = UDim2.new(0.0799999982, 0, 0.868376493, 0)
+	TimeBar.Size = UDim2.new(0.839999974, 0, 0.0399999954, 0)
+	
+	UICorner_2.CornerRadius = UDim.new(0, 4)
+	UICorner_2.Parent = TimeBar
+	
+	FullTimeBar.Name = "FullTimeBar"
+	FullTimeBar.Parent = TimeBar
+	FullTimeBar.BackgroundColor3 = Color3.fromRGB(203, 0, 3)
+	FullTimeBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	FullTimeBar.BorderSizePixel = 0
+	FullTimeBar.Position = UDim2.new(-0.00333368219, 0, -0.131622329, 0)
+	FullTimeBar.Size = UDim2.new(1.00333369, 0, 1.25000012, 0)
+	
+	UICorner_3.CornerRadius = UDim.new(0, 4)
+	UICorner_3.Parent = FullTimeBar
+	
+	UIAspectRatioConstraint_6.Parent = TimeBar
+	UIAspectRatioConstraint_6.AspectRatio = 42.000
+	
+	Text.Name = "Text"
+	Text.Parent = Notification
+	Text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Text.BackgroundTransparency = 1.000
+	Text.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Text.BorderSizePixel = 0
+	Text.Position = UDim2.new(0.0648565665, 0, 0.360000014, 0)
+	Text.Size = UDim2.new(0.850000024, 0, 0.389999956, 0)
+	Text.Font = Enum.Font.GothamMedium
+	Text.Text = text or "Sucessfully Executed"
+	Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Text.TextScaled = true
+	Text.TextSize = 9.000
+	Text.TextWrapped = true
+	Text.TextXAlignment = Enum.TextXAlignment.Left
+	Text.TextYAlignment = Enum.TextYAlignment.Top
+	
+	UIAspectRatioConstraint_7.Parent = Text
+	UIAspectRatioConstraint_7.AspectRatio = 4.359
+	
+	UITextSizeConstraint_2.Parent = Text
+	UITextSizeConstraint_2.MaxTextSize = 9
+	
+	UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(43, 43, 43)), ColorSequenceKeypoint.new(0.22, Color3.fromRGB(66, 66, 66)), ColorSequenceKeypoint.new(0.48, Color3.fromRGB(49, 49, 49)), ColorSequenceKeypoint.new(0.49, Color3.fromRGB(57, 57, 57)), ColorSequenceKeypoint.new(0.55, Color3.fromRGB(56, 56, 56)), ColorSequenceKeypoint.new(0.68, Color3.fromRGB(39, 39, 39)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(40, 40, 40))}
+	UIGradient.Rotation = 45
+	UIGradient.Parent = Notification
+	
+	UIAspectRatioConstraint_8.Parent = Notification
+	UIAspectRatioConstraint_8.AspectRatio = 2.000
+	
+	UIAspectRatioConstraint_9.Parent = NotificationHolder
+	UIAspectRatioConstraint_9.AspectRatio = 1.000
+	
+	UIAspectRatioConstraint_10.Parent = NotificationGui
+	UIAspectRatioConstraint_10.AspectRatio = 2.047
+	
+	
+	local function GORS_fake_script()
+		local script = Instance.new('LocalScript', NotificationGui)
+		local tweenservice = game:GetService("TweenService")
+		
+		script.Parent.NotificationHolder.Notification:TweenPosition(UDim2.new(-1.474, 0,0.002, 0), Enum.EasingDirection.InOut, Enum.EasingStyle.Quint, 1.2)
+		task.wait(1.2)
+		script.Parent.NotificationHolder.Notification.TimeBar.FullTimeBar:TweenSize(UDim2.new(0, 0,1.25, 0), Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, duration)
+		task.wait(duration)
+		script.Parent.NotificationHolder.Notification:TweenPosition(UDim2.new(0.8, 0,0.002, 0), Enum.EasingDirection.InOut, Enum.EasingStyle.Quint, 1)
+		NotificationHolder:Destroy()
+	end
+	coroutine.wrap(GORS_fake_script)()
 
-        local UICorner = Instance.new("UICorner")
-        UICorner.Parent = Frame
-
-        local UIGradient = Instance.new("UIGradient")
-        UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(159, 0, 3)), ColorSequenceKeypoint.new(0.25, Color3.fromRGB(175, 0, 3)), ColorSequenceKeypoint.new(0.47, Color3.fromRGB(204, 0, 3)), ColorSequenceKeypoint.new(0.66, Color3.fromRGB(173, 0, 3)), ColorSequenceKeypoint.new(0.83, Color3.fromRGB(197, 0, 3)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(245, 0, 4))}
-        UIGradient.Parent = Frame
-
-        local TextLabel = Instance.new("TextLabel")
-        TextLabel.Parent = Frame
-        TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        TextLabel.BackgroundTransparency = 1.000
-        TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-        TextLabel.BorderSizePixel = 0
-        TextLabel.Position = UDim2.new(1.31541285e-07, 0, 0, 0)
-        TextLabel.Size = UDim2.new(0, 448, 0, 50)
-        TextLabel.Font = Enum.Font.Gotham
-        TextLabel.Text = "   ".. name
-        TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-        TextLabel.TextSize = 20.000
-        TextLabel.TextXAlignment = Enum.TextXAlignment.Left
-
-        local TextLabel_2 = Instance.new("TextLabel")
-        TextLabel_2.Parent = Frame
-        TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        TextLabel_2.BackgroundTransparency = 1.000
-        TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-        TextLabel_2.BorderSizePixel = 0
-        TextLabel_2.Position = UDim2.new(0, 0, 0.367647052, 0)
-        TextLabel_2.Size = UDim2.new(0, 395, 0, 50)
-        TextLabel_2.Font = Enum.Font.Gotham
-        TextLabel_2.Text = text
-        TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-        TextLabel_2.TextSize = 20.000
-        local tween = game:GetService("TweenService")
-        Frame:TweenPosition(UDim2.new(0.757, 0,0.752, 0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.25)
-        wait(duration)
-        Frame:TweenPosition(UDim2.new(1, 100,0.756, 0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.35)
-        wait(duration)
-        Frame:Destroy()
 	else
 		print("notification is disabled")
     end

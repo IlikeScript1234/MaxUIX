@@ -122,12 +122,26 @@ local themeStyles = {
         TextColor = Color3.fromRGB(255,255,255), 
         ElementColor = Color3.fromRGB(31, 31, 31) 
     },
-    Luna = { 
+    Aqura = { 
         SchemeColor = Color3.fromRGB(26, 44, 95), 
         Background = Color3.fromRGB(0, 0, 0), 
         Header = Color3.fromRGB(31, 31, 31), 
         TextColor = Color3.fromRGB(255,255,255), 
         ElementColor = Color3.fromRGB(31, 31, 31) 
+    },
+    Vape = {
+	SchemeColor = Color3.fromRGB(5, 133, 104),
+	Background = Color3.fromRGB(20, 20, 20),
+	Header = Color3.fromRGB(20, 20, 20),
+	TextColor = Color3.fromRGB(240, 248, 246),
+	ElementColor = Color3.fromRGB(26, 25, 26)
+    },
+    Luna = { 
+	SchemeColor = Color3.fromRGB(126, 6, 232), 
+	Background = Color3.fromRGB(0, 0, 0), 
+	Header = Color3.fromRGB(31, 31, 31), 
+	TextColor = Color3.fromRGB(255,255,255), 
+	ElementColor = Color3.fromRGB(31, 31, 31) 
     },
     Private = {
         SchemeColor = Color3.fromRGB(255, 212,0), 

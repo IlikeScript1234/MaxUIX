@@ -179,46 +179,21 @@ end
 
 function kavo:Button()
     task.spawn(function()
-		local ScreenGui = Instance.new("ScreenGui")
-		local Aqura = Instance.new("Frame")
-		local UICorner = Instance.new("UICorner")
-		local UIGradient = Instance.new("UIGradient")
-		local TextButton = Instance.new("TextButton")
-		
-		
-		ScreenGui.Parent = game.CoreGui
-		ScreenGui.Name = "screenguiM"
-		ScreenGui.IgnoreGuiInset = true
-		
-		Aqura.Name = "Aqura"
-		Aqura.Parent = ScreenGui
-		Aqura.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		Aqura.BorderColor3 = Color3.fromRGB(0, 0, 0)
-		Aqura.BorderSizePixel = 0
-		Aqura.Position = UDim2.new(0.476190478, 0, 0.0557103083, 0)
-		Aqura.Size = UDim2.new(0, 35, 0, 36)
-		Aqura.Active = true
-		Aqura.Draggable = true
-		
-		UICorner.Parent = Aqura
-		
-		UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(25, 25, 25)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(58, 58, 58))}
-		UIGradient.Rotation = 45
-		UIGradient.Parent = Aqura
-		
-		TextButton.Parent = Aqura
-		TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		TextButton.BackgroundTransparency = 1.000
-		TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-		TextButton.BorderSizePixel = 0
-		TextButton.Size = UDim2.new(0, 35, 0, 36)
-		TextButton.Font = Enum.Font.GothamBold
-		TextButton.Text = "AQ"
-		TextButton.TextColor3 = Color3.fromRGB(241, 241, 241)
-		TextButton.TextSize = 20.000
-		TextButton.MouseButton1Click:Connect(function()
-			kavo:ToggleWindow()
-		end)
+	    local screenGui = Instance.new("ScreenGui")
+	    screenGui.Name = "screenGuiM"
+	    screenGui.Parent = game.CoreGui
+
+	    local button = Instance.new("TextButton")
+	    button.Position = UDim2.new(1, -30, 0, 18)
+	    button.Text = "Aqura"
+	    button.BackgroundColor3 = Color3.fromRGB(26, 25, 26)
+	    button.TextColor3 = Color3.new(1, 1, 1)
+	    button.Size = UDim2.new(0, 30, 0, 20)
+	    button.BorderSizePixel = 0
+	    button.BackgroundTransparency = 0.5
+	    button.Parent = screenGui
+	    button.MouseButton1Click:Connect(function()
+	    kavo:ToggleWindow()
 	end)
     end)
 end

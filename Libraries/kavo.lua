@@ -187,6 +187,7 @@ function kavo:Button()
 		
 		
 		ScreenGui.Parent = game.CoreGui
+		ScreenGui.Name = "screenguiM"
 		ScreenGui.IgnoreGuiInset = true
 		
 		Aqura.Name = "Aqura"
